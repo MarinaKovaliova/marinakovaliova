@@ -1,0 +1,123 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Калькулятор</title>
+<script>
+ function control(testString) { 
+         testString = testString.replace(/\++/g, "+");
+         testString = testString.replace(/\--/g, "+");
+         testString = testString.replace(/\.\./g, ".");
+         testString = testString.replace(/[+-][-+]/g, "-");
+		 
+		
+	return testString;
+     }
+function Result(){
+var str = document.getElementById('text').value; 
+var inspection = str.indexOf ('/') + 1; 
+ 
+if (inspection != 0 ){ 
+alert("Делить на 0 нельзя");  
+
+
+} 
+
+val = document.getElementById('text'); 
+val.value=control(val.value);
+val.value = eval(val.value); 
+}
+
+
+function C(){
+var q=document.getElementById('text').value;
+document.getElementById('text').value="";
+}
+      function CE() {
+	  var q=document.getElementById('text').value;
+          q = q.substr(0,q.length - 1);
+          document.getElementById("text").value = q;
+     }
+
+</script>
+</head>
+
+<body>
+ 
+<table>
+<tr>
+	<td colspan="4">
+		<input type="text" onkeypress="return event.charCode >= 40 && event.charCode <= 57"  value="" id="text">
+	</td>
+</tr>
+<tr>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='1'; return false;" value = "1" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='2'; return false;" value = "2" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='3'; return false;" value = "3" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='4'; return false;" value = "4" />
+	</td>
+</tr>
+<tr>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='5'; return false;" value = "5" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='6'; return false;" value = "6" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='7'; return false;" value = "7" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='8'; return false;" value = "8" />
+	</td>
+</tr>
+<tr>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='9'; return false;" value = "9" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='0'; return false;" value = "0" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='+'; return false;" value = "+" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='-'; return false;" value = "-" />
+	</td>
+</tr>
+<tr>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='*'; return false;" value = "*" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='/'; return false;" value = "/" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='('; return false;" value = "(" />
+	</td>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+=')'; return false;" value = ")" /> 
+	</td>
+</tr>
+<tr>
+	<td>
+		<input type="submit" onclick="document.getElementById('text').value+='.'; return false;" value = "." /> 
+	</td>
+	<td>
+		<input type="submit"  onclick="CE()" value = "CE">
+	</td>
+	<td>
+		<input type="submit"  onclick="C()" value = "C">
+	</td>
+	<td>
+<input type="submit" onclick="Result()" value = "=">
+	</td>
+</table>
+</body>
+</html>

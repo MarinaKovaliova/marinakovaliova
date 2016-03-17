@@ -1,0 +1,85 @@
+<html>
+<head>
+ <meta charset="utf-8">
+<style>
+#text1, #text2, #text3, #text4, #text5{
+
+}
+</style>
+<title>Sort</title>
+</head>
+<script>
+var arr = new Array; 
+var min;
+var max;
+
+function sortirovka(){ 
+
+
+
+var elem = { 
+val: document.getElementById('text1'), 
+c: document.getElementById('text1') 
+} 
+var elem1 = { 
+val: document.getElementById('text2'), 
+c: document.getElementById('text2') 
+} 
+
+var elem2 = { 
+val: document.getElementById('text3'), 
+c: document.getElementById('text3') 
+} 
+var elem3 = { 
+val: document.getElementById('text4'), 
+c: document.getElementById('text4') 
+} 
+var elem4 = { 
+val: document.getElementById('text5'), 
+c: document.getElementById('text5') 
+} 
+ 
+arr = [elem, elem1, elem2, elem3, elem4]; 
+
+f:for (var i = 0; i < arr.length; i++) { 
+
+min = arr[i].val.value; 
+arr[i].c.style.backgroundColor = "yellow";  
+
+for (var j = i + 1; j < arr.length; j++) {
+
+
+if (arr[j].val.value < Number(min)) {
+arr[j].c.style.backgroundColor = "green";
+max = arr[i].val.value; 
+min = arr[j].val.value; 
+arr[i].val.value = min; 
+arr[j].val.value = max;
+break f;
+
+}
+arr[i].c.style.backgroundColor = "lightgray"; 
+arr[j].c.style.backgroundColor = "lightgray"; 
+} 
+
+} 
+
+} 
+
+</script>
+
+
+<body>
+
+<form >
+  <input  type="text" value=""  id="text1" >
+  <input  type="text" value=""  id="text2" >
+  <input  type="text" value="" id="text3" >
+  <input  type="text" value=""   id="text4" >
+  <input  type="text" value=""  id="text5" >
+
+  <p><input type="button" onclick="sortirovka()" value="next">
+   <input type="button"onclick="window.location.reload()" value="clear"></p>
+  </form>
+</body>
+</html>
